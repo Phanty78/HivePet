@@ -29,6 +29,7 @@ model Creature {
     lastFedAt       DateTime
     xp              Int
     level           Int
+    diet            DietType
     createdAt       DateTime        @default(now())
 }
 
@@ -65,4 +66,11 @@ enum CreatureElement {
     Light
     Shadow
     Insect
+}
+
+enum DietType {
+    Carnivore
+    Herbivore
+    Omnivore
+    Scavenger
 }
