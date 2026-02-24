@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Bun
+bun.lockb
+
+# Build
+dist/
+
+# Environment
+.env
+.env.*
+
+# Prisma
+backend/prisma/*.db
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

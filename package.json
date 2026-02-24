@@ -1,0 +1,11 @@
+{
+    "name": "hive-pet",
+    "version": "0.0.1",
+    "private": true,
+    "description": "hive pet game",
+    "author": "Phanty",
+    "workspaces": [
+        "backend",
+        "frontend"
+    ]
+}
