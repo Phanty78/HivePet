@@ -1,0 +1,68 @@
+  generator client {
+    provider = "prisma-client-js"
+    output   = "../generated/prisma"
+  }
+
+  datasource db {
+    provider = "postgresql"
+  }
+
+model ValidatorState {
+    id              Int             @id
+    lastBlockNum    Int
+}
+
+model Creature {
+    id              String          @id
+    owner           String
+    element         CreatureElement
+    type            CreatureType
+    name            String
+    hp              Int
+    maxHp           Int
+    atk             Int
+    def             Int
+    spd             Int
+    sta             Int
+    maxSta          Int
+    hunger          Int
+    lastFedAt       DateTime
+    xp              Int
+    level           Int
+    createdAt       DateTime        @default(now())
+}
+
+model GameTransaction {
+    txId            String             @id
+    blockNum        Int
+    action          String
+    player          String
+    createdAt       DateTime         @default(now())
+}
+
+model MintLot {
+    id              Int             @id @default(autoincrement())
+    maxCreatures    Int
+    mintedCount     Int             @default(0)
+    active          Boolean         @default(false)
+}
+
+enum CreatureType {
+    Pyrofox
+    Aquashell
+    Thornbug
+    Zappowl
+    Shadecat
+}
+
+enum CreatureElement {
+    Normal
+    Fire
+    Water
+    Earth
+    Air
+    Rock
+    Light
+    Shadow
+    Insect
+}
