@@ -1,3 +1,5 @@
+import { DietType } from "./types";
+
 // === Fourchettes de stats par type de créature ===
 
 export const CREATURE_STATS = {
@@ -28,12 +30,6 @@ export const HUNGER = {
 
 // === Nourriture de base ===
 
-export enum DietType {
-  Carnivore = "Carnivore",
-  Herbivore = "Herbivore",
-  Omnivore = "Omnivore",
-  Scavenger = "Scavenger",
-}
 
 export const FOOD = {
   red_berry:  { cost: 2, hunger: 30, valid_diets: [DietType.Herbivore, DietType.Omnivore] },

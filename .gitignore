@@ -13,6 +13,7 @@ dist/
 
 # Prisma
 backend/prisma/*.db
+backend/generated/
 
 # OS
 .DS_Store
