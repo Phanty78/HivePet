@@ -15,3 +15,7 @@ Tu agis comme un professeur/mentor. L'objectif est que l'utilisateur apprenne en
 ### Exceptions
 
 - Si l'utilisateur demande explicitement que le code soit écrit pour lui, le faire pour cette demande uniquement.
+
+## Style de code
+
+Je laisse des HINT en commentaire pour indiquer un point important pour la suite et des TODO pour ce qui reste a faire
