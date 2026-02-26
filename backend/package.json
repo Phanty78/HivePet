@@ -1,19 +1,19 @@
 {
-    "name": "hive-pet-backend",
-    "version": "0.0.1",
-    "private": true,
-    "description": "hive pet backend",
-    "author": "Phanty",
-    "scripts": {
-        "validator": "bun run src/index.ts"
-    },
-    "dependencies": {
-        "@hiveio/dhive": "latest",
-        "@prisma/client": "latest",
-        "dotenv": "^17.3.1"
-    },
-    "devDependencies": {
-        "prisma": "latest",
-        "@types/bun": "latest"
-    }
+  "name": "hive-pet-backend",
+  "version": "0.0.1",
+  "private": true,
+  "description": "hive pet backend",
+  "author": "Phanty",
+  "scripts": {
+    "validator": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@hiveio/dhive": "latest",
+    "@prisma/client": "latest",
+    "dotenv": "^17.3.1"
+  },
+  "devDependencies": {
+    "prisma": "latest",
+    "@types/bun": "latest"
+  }
 }

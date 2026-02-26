@@ -1,12 +1,12 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "strict": true,
-        "outDir": "./dist",
-        "types": ["bun-types"],
-        "esModuleInterop": true
-    },
-    "include": ["src/**/*.ts"]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "outDir": "./dist",
+    "types": ["bun-types"],
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts"]
 }

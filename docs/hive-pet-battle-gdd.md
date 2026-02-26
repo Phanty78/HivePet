@@ -47,13 +47,13 @@ Récupération des HP après un combat. Le joueur a le choix entre deux méthode
 
 Chaque créature possède 5 statistiques de base, déterminées au mint avec une variance aléatoire qui crée de la rareté naturelle.
 
-| Icône | Stat | Rôle |
-|-------|------|------|
-| ❤️ | HP | Points de vie. Détermine la survie en combat. |
-| ⚔️ | ATK | Attaque. Détermine les dégâts infligés à l'adversaire. |
-| 🛡️ | DEF | Défense. Réduit les dégâts subis en combat. |
-| 💨 | SPD | Vitesse. Détermine l'ordre d'attaque et la chance d'esquive. |
-| ⚡ | STA | Stamina. Énergie nécessaire pour agir. Se régénère avec le temps. |
+| Icône | Stat | Rôle                                                              |
+| ----- | ---- | ----------------------------------------------------------------- |
+| ❤️    | HP   | Points de vie. Détermine la survie en combat.                     |
+| ⚔️    | ATK  | Attaque. Détermine les dégâts infligés à l'adversaire.            |
+| 🛡️    | DEF  | Défense. Réduit les dégâts subis en combat.                       |
+| 💨    | SPD  | Vitesse. Détermine l'ordre d'attaque et la chance d'esquive.      |
+| ⚡    | STA  | Stamina. Énergie nécessaire pour agir. Se régénère avec le temps. |
 
 La Stamina se régénère passivement (1 STA toutes les X minutes) ou peut être restaurée instantanément via le token du jeu, identique au modèle de heal.
 
@@ -61,12 +61,12 @@ La Stamina se régénère passivement (1 STA toutes les X minutes) ou peut être
 
 La faim est le mécanisme central de rétention du jeu. Chaque créature a une jauge de faim de 0 à 100.
 
-| État | Jauge | Effets |
-|------|-------|--------|
-| Rassasié | 75-100 | Bonus de +10% sur toutes les stats en combat. |
-| Normal | 25-74 | Aucun modificateur, fonctionnement standard. |
-| Affamé | 1-24 | Malus de -15% sur ATK et SPD. |
-| Starving | 0 | Impossible de combattre ou recevoir des boosts. |
+| État     | Jauge  | Effets                                          |
+| -------- | ------ | ----------------------------------------------- |
+| Rassasié | 75-100 | Bonus de +10% sur toutes les stats en combat.   |
+| Normal   | 25-74  | Aucun modificateur, fonctionnement standard.    |
+| Affamé   | 1-24   | Malus de -15% sur ATK et SPD.                   |
+| Starving | 0      | Impossible de combattre ou recevoir des boosts. |
 
 La jauge diminue de ~4 points par heure, soit un cycle complet de ~24h. Nourrir avec de la nourriture de base restaure 30-50 points selon le type.
 
@@ -86,24 +86,24 @@ Chaque level up augmente légèrement les stats de base (+1-2 points répartis a
 
 La nourriture de base sert uniquement à maintenir la jauge de faim. Elle n'accorde aucun bonus de stats. Différents types existent pour varier le gameplay et les coûts.
 
-| Aliment | Coût | Faim restaurée |
-|---------|------|----------------|
-| Baie rouge | 2 PET | +30 faim |
-| Viande crue | 3 PET | +25 faim |
-| Noix dure | 3 PET | +25 faim |
-| Herbe vive | 2 PET | +35 faim |
-| Nectar doré | 4 PET | +40 faim |
+| Aliment     | Coût  | Faim restaurée |
+| ----------- | ----- | -------------- |
+| Baie rouge  | 2 PET | +30 faim       |
+| Viande crue | 3 PET | +25 faim       |
+| Noix dure   | 3 PET | +25 faim       |
+| Herbe vive  | 2 PET | +35 faim       |
+| Nectar doré | 4 PET | +40 faim       |
 
 ### 6.2 Nourriture de boost (prévue phase ultérieure)
 
 Non implémentée dans le MVP. Les boosts temporaires seront ajoutés dans une mise à jour future pour enrichir la stratégie de combat. Exemples envisagés :
 
-| Aliment | Coût | Effet | Durée |
-|---------|------|-------|-------|
-| Élixir de rage | 15 tokens | +25% ATK | 3 combats |
-| Bouclier de fer | 15 tokens | +25% DEF | 3 combats |
-| Potion de célérité | 12 tokens | +30% SPD | 3 combats |
-| Festin royal | 30 tokens | +15% toutes stats | 5 combats |
+| Aliment            | Coût      | Effet             | Durée     |
+| ------------------ | --------- | ----------------- | --------- |
+| Élixir de rage     | 15 tokens | +25% ATK          | 3 combats |
+| Bouclier de fer    | 15 tokens | +25% DEF          | 3 combats |
+| Potion de célérité | 12 tokens | +30% SPD          | 3 combats |
+| Festin royal       | 30 tokens | +15% toutes stats | 5 combats |
 
 Les boosts ne sont pas cumulables entre eux (le dernier écrase le précédent). Ne peut être appliqué que si la créature est en état Normal ou Rassasié.
 
@@ -144,13 +144,13 @@ Le nombre total de créatures est limité. Le mint s'ouvre par lots successifs p
 
 ### 8.2 Types de créatures
 
-| Créature | HP | ATK | DEF | SPD | STA |
-|----------|------|------|------|------|------|
-| Pyrofox | 28-32 | 10-14 | 6-10 | 8-12 | 18-22 |
-| Aquashell | 36-44 | 6-10 | 12-16 | 4-8 | 16-20 |
-| Thornbug | 32-38 | 8-12 | 10-14 | 6-10 | 20-24 |
-| Zappowl | 26-30 | 12-16 | 4-8 | 12-16 | 14-18 |
-| Shadecat | 30-34 | 9-13 | 7-11 | 10-14 | 17-21 |
+| Créature  | HP    | ATK   | DEF   | SPD   | STA   |
+| --------- | ----- | ----- | ----- | ----- | ----- |
+| Pyrofox   | 28-32 | 10-14 | 6-10  | 8-12  | 18-22 |
+| Aquashell | 36-44 | 6-10  | 12-16 | 4-8   | 16-20 |
+| Thornbug  | 32-38 | 8-12  | 10-14 | 6-10  | 20-24 |
+| Zappowl   | 26-30 | 12-16 | 4-8   | 12-16 | 14-18 |
+| Shadecat  | 30-34 | 9-13  | 7-11  | 10-14 | 17-21 |
 
 Les créatures avec des stats proches du maximum de leur fourchette seront naturellement plus recherchées sur le marché secondaire, créant une économie de trading.
 
@@ -173,12 +173,12 @@ Les créatures avec des stats proches du maximum de leur fourchette seront natur
 
 ### 9.3 custom_json types
 
-| Action | Payload | Auth |
-|--------|---------|------|
-| mint | `{ creature_type }` | Active |
-| feed | `{ creature_id, food_type }` | Posting |
+| Action | Payload                       | Auth    |
+| ------ | ----------------------------- | ------- |
+| mint   | `{ creature_type }`           | Active  |
+| feed   | `{ creature_id, food_type }`  | Posting |
 | battle | `{ creature_id, difficulty }` | Posting |
-| heal | `{ creature_id, method }` | Posting |
+| heal   | `{ creature_id, method }`     | Posting |
 
 ## 10. Roadmap MVP
 
