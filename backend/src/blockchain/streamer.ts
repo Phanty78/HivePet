@@ -32,8 +32,21 @@ export async function startStreaming() {
       const block = await client.database.getBlock(currentBlock)
 
       if (!block) continue
-
+      // Traitement du bloc via le parser
       await parseBlock(block, currentBlock)
+      // Sauverage en BDD du bloc courant
+      await prisma.validatorState.upsert({
+        create: {
+          lastBlockNum : currentBlock,
+          id : 1
+        },
+        update: {
+          lastBlockNum : currentBlock
+        },
+        where: {
+           id: 1 
+        }
+      })
       currentBlock++
     } else {
       await Bun.sleep(3000)
