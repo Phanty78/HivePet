@@ -38,7 +38,8 @@ Dernière mise à jour : 28 Février 2026
 - [x] getHunger — prise en compte du hungerAtLastFed
 - [x] Constantes — DECAY_PER_HOUR (~4/h), HUNGER.MAX (100)
 - [x] Tests getHunger (throw, décroissance, zéro, même timestamp)
-- [ ] Etats de faim (Rassasié/Normal/Affamé/Starving) — logique de modificateurs
+- [x] getHungerState — détermination de l'état de faim (Satiated/Normal/Hungry/Starving)
+- [ ] Tests getHungerState
 
 ### Système de nourriture
 
