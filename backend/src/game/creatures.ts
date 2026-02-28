@@ -3,15 +3,15 @@ import { CreatureType } from '../../generated/prisma'
 import { CreatureStats } from '../types'
 
 // Cette fonction compare le moment du dernier repas avec l'heure actuel et renvoie le taux de faim mis a jour
-export function getHunger(lastFedAt: Date, now: Date): number {
+export function getHunger(lastFedAt: Date, now: Date, hungerAtLastFed: number): number {
   if (lastFedAt.getTime() > now.getTime()) {
-    throw new Error("lastFedAt can't be in the future")
+    throw new Error("lastFedAt ne peut pas être dans le future.")
   }
 
   const elapsed_time_in_ms: number = now.getTime() - lastFedAt.getTime()
   const elapsed_time_in_hours: number = elapsed_time_in_ms / (1000 * 60 * 60)
   const hunger_lost: number = elapsed_time_in_hours * HUNGER.DECAY_PER_HOUR
-  return Math.max(0, HUNGER.MAX - hunger_lost)
+  return Math.max(0, hungerAtLastFed - hunger_lost)
 }
 
 // Cette fonction initialise les caractéristique d'une créature de facon déterministe lors du mint
