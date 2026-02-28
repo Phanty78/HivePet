@@ -10,6 +10,7 @@
   "dependencies": {
     "@hiveio/dhive": "latest",
     "@prisma/client": "latest",
+    "@prisma/client-runtime-utils": "^7.4.2",
     "dotenv": "^17.3.1"
   },
   "devDependencies": {
