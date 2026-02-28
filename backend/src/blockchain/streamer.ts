@@ -37,15 +37,15 @@ export async function startStreaming() {
       // Sauverage en BDD du bloc courant
       await prisma.validatorState.upsert({
         create: {
-          lastBlockNum : currentBlock,
-          id : 1
+          lastBlockNum: currentBlock,
+          id: 1,
         },
         update: {
-          lastBlockNum : currentBlock
+          lastBlockNum: currentBlock,
         },
         where: {
-           id: 1 
-        }
+          id: 1,
+        },
       })
       currentBlock++
     } else {

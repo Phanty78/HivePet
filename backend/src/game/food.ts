@@ -13,7 +13,7 @@ export function feedCreature(
 
   if (!(foodType in FOOD)) {
     console.warn(`${foodType} n'est pas une FOOD déclaré dans la constante FOOD`)
-    return(currentHunger)
+    return currentHunger
   }
 
   const food = FOOD[foodType as keyof typeof FOOD]
@@ -21,7 +21,7 @@ export function feedCreature(
   // Si le foodType n'est pas comptable avec creatureDiet alors on renvoie une erreur
   if (!(food.valid_diets as readonly DietType[]).includes(creatureDiet)) {
     console.warn(`${food} n'est pas une nouritture valide pour ${creatureDiet}`)
-    return(currentHunger)
+    return currentHunger
   }
 
   let updatedHunger = currentHunger + food.hunger

@@ -5,7 +5,7 @@ import { CreatureStats } from '../types'
 // Cette fonction compare le moment du dernier repas avec l'heure actuel et renvoie le taux de faim mis a jour
 export function getHunger(lastFedAt: Date, now: Date, hungerAtLastFed: number): number {
   if (lastFedAt.getTime() > now.getTime()) {
-    throw new Error("lastFedAt ne peut pas être dans le future.")
+    throw new Error('lastFedAt ne peut pas être dans le future.')
   }
 
   const elapsed_time_in_ms: number = now.getTime() - lastFedAt.getTime()
