@@ -1,5 +1,5 @@
 import { FOOD, HUNGER } from '../constants'
-import { DietType } from '../types'
+import { DietType, hungerThresholds } from '../types'
 
 export function feedCreature(
   foodType: string,
@@ -29,4 +29,23 @@ export function feedCreature(
     updatedHunger = HUNGER.MAX
   }
   return updatedHunger
+}
+
+export function getHungerState(currentHunger: number): hungerThresholds {
+
+  if (currentHunger < 0){
+    throw new Error("Current hunger ne peut pas être inférieur à zéro.")
+  }
+
+
+  if (currentHunger >= HUNGER.THRESHOLDS.SATIATED) {
+    return hungerThresholds.Satiated
+  }
+  if (currentHunger >= HUNGER.THRESHOLDS.NORMAL) {
+    return hungerThresholds.Normal
+  }
+  if (currentHunger >= HUNGER.THRESHOLDS.HUNGRY) {
+    return hungerThresholds.Hungry
+  }
+    return hungerThresholds.Starving
 }
