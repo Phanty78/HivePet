@@ -1,7 +1,7 @@
 // TODO - revoir le type de payload avec une interface
 
 export async function handleAction(payload: any, username: string, txId: string, blockNum: number) {
-  let trimedUsername = username.trim()
+  const trimedUsername = username.trim()
   if (trimedUsername === '') {
     throw new Error('username ne peux pas être une chaine vide')
   }
