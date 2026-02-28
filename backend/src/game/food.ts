@@ -18,7 +18,7 @@ export function feedCreature(
 
   const food = FOOD[foodType as keyof typeof FOOD]
 
-  // Si le foodType n'est pas comptable avec creatureDiet alors on renvoie une erreur
+  // Si le foodType n'est pas comptable avec creatureDiet alors on retourne currentHunger
   if (!(food.valid_diets as readonly DietType[]).includes(creatureDiet)) {
     console.warn(`${food} n'est pas une nouritture valide pour ${creatureDiet}`)
     return currentHunger
