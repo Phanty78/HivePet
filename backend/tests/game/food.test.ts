@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'bun:test'
-import { feedCreature } from '../../src/game/food'
+import { feedCreature, getHungerState } from '../../src/game/food'
 import { FOOD } from '../../src/constants'
-import { DietType } from '../../src/types'
+import { DietType, hungerThresholds } from '../../src/types'
 
 describe('FeedCreature', () => {
   it('Devrais throw si la valeur de current-hunger est supérieure ou égale à hunger.max.', () => {
@@ -18,5 +18,19 @@ describe('FeedCreature', () => {
 
   it("devrait retourner le numéro 50 car Le DietType n'autorise pas cette nourriture.", () => {
     expect(feedCreature('red_berry', DietType.Carnivore, 50)).toBe(50)
+  })
+})
+
+describe('getHungerState', () => {
+  it("Devrait throw si Currenthunger est inférieur à zéro.", () => {
+    expect(() => getHungerState(-1)).toThrow()
+  })
+
+  it("devrait renvoyer Satiated si currenthunger est supérieure ou égale à HUNGER.THRESHOLDS.SATIATED", () => {
+    expect(getHungerState(76)).toBe(hungerThresholds.Satiated)
+  })
+
+  it("devrait renvoyer Satiated si currenthunger est inférieur à HUNGER.THRESHOLDS.HUNGRY", () => {
+    expect(getHungerState(0)).toBe(hungerThresholds.Starving)
   })
 })
