@@ -1,6 +1,6 @@
-// TODO - revoir le type de payload avec une interface
+import { GamePayload } from "../types"
 
-export async function handleAction(payload: any, username: string, txId: string, blockNum: number) {
+export async function handleAction(payload: GamePayload, username: string, txId: string, blockNum: number) {
   const trimedUsername = username.trim()
   if (trimedUsername === '') {
     throw new Error('username ne peux pas être une chaine vide')

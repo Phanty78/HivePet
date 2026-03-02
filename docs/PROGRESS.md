@@ -39,7 +39,7 @@ Dernière mise à jour : 28 Février 2026
 - [x] Constantes — DECAY_PER_HOUR (~4/h), HUNGER.MAX (100)
 - [x] Tests getHunger (throw, décroissance, zéro, même timestamp)
 - [x] getHungerState — détermination de l'état de faim (Satiated/Normal/Hungry/Starving)
-- [ ] Tests getHungerState
+- [x] Tests getHungerState
 
 ### Système de nourriture
 
@@ -55,7 +55,7 @@ Dernière mise à jour : 28 Février 2026
 
 - [x] handleAction — routeur switch sur payload.action
 - [x] handleAction — validation username
-- [ ] Typage du payload (interface)
+- [x] Typage du payload (interface)
 - [ ] Action mint — logique complète (vérif lot, places dispo, création créature, NFT)
 - [ ] Action feed — logique complète (vérif créature, ownership, calcul faim, update BDD)
 
