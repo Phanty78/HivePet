@@ -1,6 +1,6 @@
 import { GamePayload } from "../types"
 
-export async function handleAction(payload: GamePayload, username: string, txId: string, blockNum: number) {
+export async function handleAction(payload: GamePayload, username: string, txId: string, blockNum: number, blockId: string) {
   const trimedUsername = username.trim()
   if (trimedUsername === '') {
     throw new Error('username ne peux pas être une chaine vide')

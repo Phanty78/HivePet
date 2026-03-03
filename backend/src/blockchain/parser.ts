@@ -2,7 +2,7 @@ import { SignedBlock } from '@hiveio/dhive'
 import { handleAction } from '../actions'
 
 // Cette fonction filtre et extrait les données de la blockchain
-export async function parseBlock(block: SignedBlock, currentBlock: number) {
+export async function parseBlock(block: SignedBlock, currentBlock: number, blockId: string) {
   if (currentBlock <= 0) {
     throw new Error('currentBlock ne peut pas être égale à 0 ou négatif')
   }
@@ -26,7 +26,7 @@ export async function parseBlock(block: SignedBlock, currentBlock: number) {
           return
         }
         const username = op[1].required_posting_auths[0]
-        handleAction(payload, username, txId, currentBlock)
+        handleAction(payload, username, txId, currentBlock, blockId)
       }
     })
   }

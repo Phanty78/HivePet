@@ -10,7 +10,7 @@ const client = new Client([
 ])
 const prisma = new PrismaClient()
 
-export async function startStreaming() {
+export async function startStreaming(): Promise<void> {
   // On essaie de récupérer en BDD la valeur du dernier bloc
   const state: ValidatorState | null = await prisma.validatorState.findUnique({
     where: { id: 1 },
@@ -32,9 +32,11 @@ export async function startStreaming() {
       const block = await client.database.getBlock(currentBlock)
 
       if (!block) continue
+      // Cette ligne lui permet de récupérer Bloc ID.
+      const blockId = block.block_id
       // Traitement du bloc via le parser
-      await parseBlock(block, currentBlock)
-      // Sauverage en BDD du bloc courant
+      await parseBlock(block, currentBlock, blockId)
+      // Sauvegarde en BDD du bloc courant
       await prisma.validatorState.upsert({
         create: {
           lastBlockNum: currentBlock,
