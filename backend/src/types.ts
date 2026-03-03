@@ -33,6 +33,18 @@ export enum CreatureList {
   shadecat = 'Shadecat'
 }
 
+export enum CreatureElement {
+  Normal = "Normal",
+  Fire = "Fire",
+  Water = "Water",
+  Earth = "Earth",
+  Air = "Air",
+  Light = "Light",
+  Shadow = "Shadow",
+  Rock = "Rock",
+  Insect = "Insect"
+}
+
 export interface CreatureStats {
   hp: number
   atk: number

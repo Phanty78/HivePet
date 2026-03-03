@@ -1,4 +1,4 @@
-import { DietType } from './types'
+import { DietType, CreatureElement } from './types'
 
 // === Fourchettes de stats par type de créature ===
 
@@ -9,6 +9,36 @@ export const CREATURE_STATS = {
   Zappowl: { hp: [26, 30], atk: [12, 16], def: [4, 8], spd: [12, 16], sta: [14, 18] },
   Shadecat: { hp: [30, 34], atk: [9, 13], def: [7, 11], spd: [10, 14], sta: [17, 21] },
 } as const
+
+// === Caractéristique des créatures ===
+
+export const CREATURE_PROFILES = {
+  Pyrofox: {
+    stats : CREATURE_STATS.Pyrofox,
+    diet :  DietType.Carnivore,
+    element : CreatureElement.Fire
+  },
+  Aquashell: {
+    stats : CREATURE_STATS.Aquashell,
+    diet : DietType.Omnivore,
+    element : CreatureElement.Water
+  },
+  Thornbug: {
+    stats : CREATURE_STATS.Thornbug,
+    diet : DietType.Scavenger,
+    element : CreatureElement.Insect
+  },
+  Zappowl: {
+    stats : CREATURE_STATS.Zappowl,
+    diet : DietType.Carnivore,
+    element : CreatureElement.Air
+  },
+  Shadecat: {
+    stats : CREATURE_STATS.Shadecat,
+    diet : DietType.Carnivore,
+    element : CreatureElement.Shadow
+  }
+}
 
 // === Système de faim ===
 
@@ -56,3 +86,4 @@ export const XP = {
   DEFEAT_MAX: 5,
   FEED_BONUS: 5,
 } as const
+
